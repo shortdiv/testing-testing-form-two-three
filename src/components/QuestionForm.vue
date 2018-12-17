@@ -8,9 +8,10 @@
   >
     <input type="hidden" name="form-name" value="ask-team-vue" />
     <label v-for="(panelist, index) in panelists" :key="index">
+      <input type="hidden" name="panelist" value />
       <input
         type="radio"
-        name="panelist"
+        name="askPerson"
         @input="ev => (form.askPerson = ev.target.value)"
         :value="panelist"
         :checked="form.askPerson === panelist"
@@ -46,6 +47,7 @@ export default {
       const axiosConfig = {
         header: { "Content-Type": "application/x-www-form-urlencoded" }
       };
+      debugger;
       axios.post(
         "/",
         this.encode({
