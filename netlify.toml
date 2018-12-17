@@ -1,0 +1,5 @@
+[build]
+  # Run the site build
+  command = "yarn run build"
+  # Directory published to netlify's CDN
+  publish = "dist"
