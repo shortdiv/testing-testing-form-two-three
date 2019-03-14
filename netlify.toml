@@ -1,5 +1,4 @@
 [build]
-  # Run the site build
-  command = "yarn run build"
-  # Directory published to netlify's CDN
+  command = "yarn build"
+  functions = "lambda"
   publish = "dist"
