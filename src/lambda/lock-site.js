@@ -1,4 +1,4 @@
-import axios from "axios";
+// import axios from "axios";
 
 export function handler(event, context, callback) {
   console.log("hi");
@@ -9,22 +9,22 @@ export function handler(event, context, callback) {
 
   console.log("headers", headers);
 
-  axios({
-    url: `https://api.netlify.com/api/v1/sites/${
-      event.headers["x-bb-client-request-uuid"]
-    }`,
-    headers,
-    method: "PUT",
-    data: {
-      password: "superSecretPassword"
-    }
-  })
-    .then(res => {
-      console.log(res);
-    })
-    .catch(err => {
-      console.log(err);
-    });
+  // axios({
+  //   url: `https://api.netlify.com/api/v1/sites/${
+  //     event.headers["x-bb-client-request-uuid"]
+  //   }`,
+  //   headers,
+  //   method: "PUT",
+  //   data: {
+  //     password: "superSecretPassword"
+  //   }
+  // })
+  //   .then(res => {
+  //     console.log(res);
+  //   })
+  //   .catch(err => {
+  //     console.log(err);
+  //   });
 
   callback(null, {
     statusCode: 200,
