@@ -7,11 +7,13 @@ export function handler(event, context, callback) {
 
   const headers = event.headers;
 
+  console.log("headers", headers);
+
   axios({
     url: `https://api.netlify.com/api/v1/sites/${
       event.headers["x-bb-client-request-uuid"]
-    }/`,
-    headers: { Authorization: `Bearer ${headers}` },
+    }`,
+    headers,
     method: "PUT",
     data: {
       password: "superSecretPassword"
