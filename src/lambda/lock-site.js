@@ -14,11 +14,15 @@ export function handler(event, context, callback) {
     headers: { Authorization: `Bearer ${headers}` },
     method: "PUT",
     data: {
-      password: true
+      password: "superSecretPassword"
     }
-  }).then(res => {
-    console.log(res);
-  });
+  })
+    .then(res => {
+      console.log(res);
+    })
+    .catch(err => {
+      console.log(err);
+    });
 
   callback(null, {
     statusCode: 200,
